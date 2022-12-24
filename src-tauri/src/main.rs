@@ -36,6 +36,7 @@ fn main() {
                 .decorations(false)
                 .transparent(true)
                 .fullscreen(true)
+                .always_on_top(true)
                 .build()?;
             }
 
