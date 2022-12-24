@@ -29,21 +29,26 @@ fn main() {
 
                 let monitor_geometry = monitor.geometry();
 
-                let _ = tauri::WindowBuilder::new(
+                let window = tauri::WindowBuilder::new(
                     app,
                     format!("{}", i),
                     tauri::WindowUrl::App("index.html".into()),
                 )
-                .position(monitor_geometry.x() as f64, monitor_geometry.y() as f64)
-                .inner_size(
-                    monitor_geometry.width() as f64,
-                    monitor_geometry.height() as f64,
-                )
-                .decorations(false)
-                .transparent(true)
-                .fullscreen(true)
-                .always_on_top(true)
-                .build()?;
+                    .position(monitor_geometry.x() as f64, monitor_geometry.y() as f64)
+                    .inner_size(
+                        monitor_geometry.width() as f64,
+                        monitor_geometry.height() as f64,
+                    )
+                    .decorations(false)
+                    .transparent(true)
+                    .fullscreen(true)
+                    .always_on_top(true)
+                    .focused(false)
+                    .build()
+                    .expect("Window must be created successfully");
+
+                window.set_ignore_cursor_events(true).unwrap();
+                window.set_cursor_visible(false).unwrap();
             }
 
             Ok(())
