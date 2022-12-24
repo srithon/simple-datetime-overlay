@@ -23,4 +23,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   updateTime();
   setInterval(updateTime, 1000);
+
+  window.addEventListener("keyup", (event) => {
+    // if it's 'q'
+    if (event.isComposing || event.keyCode == 81) {
+      // close the window
+      invoke("close");
+    }
+  })
 });
