@@ -44,6 +44,7 @@ fn main() {
                 )
                 .decorations(false)
                 .transparent(true)
+                .fullscreen(true)
                 .build()?;
             }
 
