@@ -13,8 +13,6 @@ fn greet(name: &str) -> String {
 }
 
 fn main() {
-    gdk::init();
-
     tauri::Builder::default()
         .setup(|app| {
             let display = DisplayManager::get()
