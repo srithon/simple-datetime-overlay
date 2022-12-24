@@ -1,17 +1,26 @@
 const { invoke } = window.__TAURI__.tauri;
 
-let greetInputEl;
 let greetMsgEl;
+let currentTimeMsgEl;
+let currentDateMsgEl;
 
-async function greet() {
-  // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-  greetMsgEl.textContent = await invoke("greet", { name: greetInputEl.value });
+const dateFormat =
+    new Intl.DateTimeFormat("en-US", {dateStyle : "long"});
+const timeFormat =
+    new Intl.DateTimeFormat("en-US", {timeStyle : "long"});
+
+function updateTime() {
+  const currentDate = new Date();
+  const newDateString = dateFormat.format(currentDate);
+  const newTimeString = timeFormat.format(currentDate);
+  currentDateMsgEl.textContent = newDateString;
+  currentTimeMsgEl.textContent = newTimeString;
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  greetInputEl = document.querySelector("#greet-input");
-  greetMsgEl = document.querySelector("#greet-msg");
-  document
-    .querySelector("#greet-button")
-    .addEventListener("click", () => greet());
+  currentDateMsgEl = document.querySelector("#current-date-msg");
+  currentTimeMsgEl = document.querySelector("#current-time-msg");
+
+  updateTime();
+  setInterval(updateTime, 1000);
 });
