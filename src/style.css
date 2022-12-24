@@ -100,3 +100,15 @@ button {
     background-color: #0f0f0f98;
   }
 }
+
+body {
+  font-size: 3em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100vw;
+}
