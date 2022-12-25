@@ -10,8 +10,8 @@ extern "C" {
 }
 
 use gdk::DisplayManager;
-use tauri::Manager;
 use std::process::Command;
+use tauri::Manager;
 
 use clap::{ArgGroup, Parser};
 
@@ -51,8 +51,11 @@ fn main() {
             ctrlc::set_handler(move || {
                 // send the close event over the channel
                 // NOTE: for some reason, only works with -'s, not_'s in event name
-                let _ = handle.emit_all("close-frontend", None::<()>).expect("Must be able to send");
-            }).expect("Error setting Ctrl-C handler");
+                let _ = handle
+                    .emit_all("close-frontend", None::<()>)
+                    .expect("Must be able to send");
+            })
+            .expect("Error setting Ctrl-C handler");
 
             let get_geometry = |monitor_num| {
                 let monitor = display.monitor(monitor_num).expect(&format!(
