@@ -25,3 +25,5 @@ As an example of how you can set up simple-datetime-overlay on your own system, 
 Here is a usage GIF showing simple-datetime-overlay in action:
 
 [[./usage.gif]]
+
+Note that to make this GIF smaller, I reduced the framerate and the quality; the actual application is a lot smoother than what is shown.
