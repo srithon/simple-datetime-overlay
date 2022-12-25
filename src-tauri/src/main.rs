@@ -123,6 +123,8 @@ fn main() {
                 .fullscreen(true)
                 .always_on_top(true)
                 .focused(false)
+                .skip_taskbar(true)
+                .resizable(false)
                 .build()
                 .expect("Window must be created successfully");
 
