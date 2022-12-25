@@ -23,11 +23,12 @@ use clap::{ArgGroup, Parser};
                 .args(&["only_monitor", "active_monitor"]),
         ))]
 struct Args {
-    /// Which number monitor should be displayed
+    /// If passed in, displays only on n'th monitor.
     #[arg(short, long)]
     only_monitor: Option<u8>,
 
-    /// If set, only display on the monitor with the active, focused window
+    /// If set, only display on the monitor with the active, focused window.
+    /// Note that this functionality currently only works on Linux systems running X11 that have ~xdotool~ installed.
     #[arg(short, long, default_value_t = false)]
     active_monitor: bool,
 }
