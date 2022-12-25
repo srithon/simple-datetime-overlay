@@ -9,7 +9,7 @@ extern "C" {
     fn gdk_x11_window_get_xid(window: gdk::Window) -> u32;
 }
 
-use gdk::{prelude::ObjectExt, DisplayManager};
+use gdk::DisplayManager;
 use tauri::Manager;
 use std::process::Command;
 
