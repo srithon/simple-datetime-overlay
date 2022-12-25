@@ -1,0 +1,27 @@
+#+TITLE: simple-datetime-overlay
+
+* Description
+
+~simple-datetime-overlay~ is an application that creates fullscreen overlays on specified monitors, displaying the current date and time. It is written using the Tauri framework, which is essentially a Rust alternative to Electron.
+
+* Usage
+
+To use simple-datetime-overlay, run the following command:
+
+~simple-datetime-overlay [OPTIONS]~
+
+where ~[OPTIONS]~ are any of the following optional flags:
+
+- ~-o, --only-monitor <ONLY_MONITOR>~: Display the overlay on the specified monitor (e.g. ~--only-monitor 1~ displays on the first monitor)
+- ~-a, --active-monitor~: Display the overlay on the monitor with the active, focused window. Note that this functionality currently only works on Linux systems running X11 that have ~xdotool~ installed.
+- ~-h, --help~: Print help information
+- ~-V, --version~: Print version information
+
+The created overlays do not take focus and cannot be clicked so that they do not interfere with current windows.
+Therefore, to close the created windows, send it a SIGINT, SIGTERM, or SIGHUP signal on Unix, or whatever the Ctrl+C signal equivalent is on non-Unix systems.
+
+As an example of how you can set up simple-datetime-overlay on your own system, you could configure it to launch when you hold the Numpad 5 key and close when you release the key by running the command ~killall simple-datetime-overlay~; this is how I am using it on my system. Please note that this setup is not built into the application and is provided as inspiration for users to customize ~simple-datetime-overlay~ for their own purposes.
+
+Here is a usage GIF showing simple-datetime-overlay in action:
+
+[[./usage.gif]]
