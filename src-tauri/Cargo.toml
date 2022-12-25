@@ -1,8 +1,8 @@
 [package]
-name = "display-time-gui"
-version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+name = "simple-datetime-overlay"
+version = "0.1.0"
+description = "A Tauri app that renders a fullscreen date/time overlay over your screens"
+authors = ["srithon"]
 license = ""
 repository = ""
 edition = "2021"
