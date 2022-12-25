@@ -1,7 +1,7 @@
 [package]
 name = "simple-datetime-overlay"
 version = "0.1.0"
-description = "A Tauri app that renders a fullscreen date/time overlay over your screens"
+description = "A Tauri app that renders a fullscreen date/time overlay over your screens."
 authors = ["srithon"]
 license = ""
 repository = ""
